@@ -1,5 +1,6 @@
 package hackerRank.thirtyDaysOfCode;
 
+import java.util.Scanner;
 class Person {
     protected String firstName;
     protected String lastName;
@@ -21,7 +22,7 @@ class Person {
 
 }
 
-public class Day12Inheritance extends Person{
+class Student extends Person{
     private int[] testScores;
 
     /*
@@ -33,7 +34,7 @@ public class Day12Inheritance extends Person{
      *   @param scores - An array of integers denoting the Person's test scores.
      */
     // Write your constructor here
-    public Day12Inheritance(String firstName, String lastName, int idNumber, int[] scores) {
+    public Student(String firstName, String lastName, int idNumber, int[] scores) {
         super(firstName, lastName, idNumber);
         this.testScores = scores;
     }
@@ -65,7 +66,7 @@ public class Day12Inheritance extends Person{
     }
 }
 
-class Solution {
+class Day12Inheritance {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String firstName = scan.next();
@@ -78,7 +79,7 @@ class Solution {
         }
         scan.close();
 
-        Day12Inheritance s = new Day12Inheritance(firstName, lastName, id, testScores);
+        Student s = new Student(firstName, lastName, id, testScores);
         s.printPerson();
         System.out.println("Grade: " + s.calculate() );
     }
